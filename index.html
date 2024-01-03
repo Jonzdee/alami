@@ -17,7 +17,7 @@
 
 <script>
 
-    let inpHr, inpMin, inpSec;
+    let inpHr, inpMin, inpSec, myAudio; 
     function setAlarm(){
         inpHr = inputHr.value;
         inpMin = inputMin.value;
@@ -39,7 +39,7 @@
         displaySec.innerText = sec;
 
         if(inpHr == hr && inpMin == min && inpSec == sec){
-         let myAudio = new Audio("song.mp3");
+         myAudio = new Audio("song.mp3");
          myAudio.play();
         }
     }
