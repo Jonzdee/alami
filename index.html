@@ -12,6 +12,10 @@
     <input type="text" name="" id="inputHr">
     <input type="text" name="" id="inputMin">
     <input type="text" name="" id="inputSec">
+    <select name="" id=" selectDay">
+        <option value="">AM</option>
+        <option value="">PM</option>
+    </select>
     <button onclick="setAlarm()"> Set Alarm</button>
     <button onclick="stopAlarm()">Stop Alarm</button>
 
@@ -22,6 +26,7 @@
         inpHr = inputHr.value;
         inpMin = inputMin.value;
         inpSec = inputSec.value;
+        
     }
     
     function stopAlarm (){
@@ -39,7 +44,7 @@
         displaySec.innerText = sec;
 
         if(inpHr == hr && inpMin == min && inpSec == sec){
-         myAudio = new Audio("song.mp3");
+         let myAudio = new Audio("song.mp3");
          myAudio.play();
         }
     }
