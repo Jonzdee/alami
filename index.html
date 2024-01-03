@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+</head>
+<body>
+    <span id="displayHr"></span>
+    <span id="displayMin"></span>
+    <span id="displaySec"></span>
+    <input type="text" name="" id="inputHr">
+    <input type="text" name="" id="inputMin">
+    <input type="text" name="" id="inputSec">
+    <button onclick="setAlarm()"> Set Alarm</button>
+    <button onclick="stopAlarm()">Stop Alarm</button>
+
+<script>
+
+    let inpHr, inpMin, inpSec;
+    function setAlarm(){
+        inpHr = inputHr.value;
+        inpMin = inputMin.value;
+        inpSec = inputSec.value;
+    }
+    
+    function stopAlarm (){
+      myAudio.pause();
+    }
+
+    function myTime (){
+        let myDate = new Date;
+        let hr = myDate.getHours();
+        let min = myDate.getMinutes();
+        let sec = myDate.getSeconds();
+
+        displayHr.innerText = hr;
+        displayMin.innerText = min;
+        displaySec.innerText = sec;
+
+        if(inpHr == hr && inpMin == min && inpSec == sec){
+         let myAudio = new Audio("song.mp3");
+         myAudio.play();
+        }
+    }
+
+setInterval(myTime, 1000)
+
+</script>
+
+</body>
+</html>
